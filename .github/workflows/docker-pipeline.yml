@@ -1,0 +1,17 @@
+name: docker-pipeline-harini
+on: push
+jobs:
+  docker-job:
+    runs-on: ubuntu-latest
+    steps:
+       - name: print your Register Number
+         run: echo "Hello world - 22it012"
+         
+       - name: checkout
+         uses: action/checkout@v4
+         
+       - name: Docker Build
+         run: docker build -t hariniarumugam/ml-model-22it012 . 
+
+       - name: Docker Images
+         run: docker images
